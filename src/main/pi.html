@@ -1,10 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily Poetry</title>
+
+    <style>
+        :root {
+          --pad: 13px;          /* multiple of 13 */
+          --pi-red: #c1121f;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+          margin: 0;
+          font-family: serif;
+          background: #fff;
+          color: #111;
+        }
+
+        .page {
+          min-height: 100svh;
+          padding: var(--pad);
+          display: flex;
+          flex-direction: column;
+        }
+
+        header {
+          position: relative;
+          padding: var(--pad);
+        }
+
+        .pi {
+          text-align: center;
+          line-height: 1;
+          color: var(--pi-red);
+          user-select: none;
+          font-size: clamp(113px, 13vw, 260px);
+        }
+
+        .day-log {
+          position: absolute;
+          top: var(--pad);
+          right: var(--pad);
+          line-height: 1;
+          white-space: nowrap;
+          font-size: clamp(23px, 1.3vw, 39px);
+        }
+
+        main {
+          flex: 1;
+          display: grid;
+          place-items: center;
+          text-align: center;
+          padding: 0 var(--pad);
+        }
+
+        .poem-wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 52rem;
+          gap: clamp(13px, 2.6vw, 39px);
+        }
+
+        .poem-title {
+          line-height: 1.1;
+          font-size: clamp(65px, 3vw, 113px);
+        }
+
+        .poem {
+          line-height: 1.3;
+          white-space: pre-line;
+          font-size: clamp(13px, 7vw, 52px);
+          <!--Long Poem: font-size: clamp(13px, 2.6vw, 52px);-->
+        }
+
+        .poem-date {
+          line-height: 0.3;
+          white-space: pre-line;
+          font-size: clamp(13px, 2.6vw, 26px);
+        }
+
+        /* Print-friendly formatting (sizes in px, all multiples of 13) */
+        @media print {
+          body { color: #000; }
+          .page {
+            min-height: auto;
+            padding: 0.75in;
+          }
+          header {
+            padding: 0;
+            margin-bottom: 0.35in;
+          }
+          .day-log {
+            position: static;
+            text-align: right;
+            font-size: 26px;
+          }
+          .pi {
+            color: #000;
+            font-size: 65px;
+          }
+          .poem-title { font-size: 39px; }
+          .poem { font-size: 26px; line-height: 1.4; }
+          .poem-date { font-size: 13px; }
+        }
+    </style>
 </head>
+
 <body>
-$END$
+<div class="page">
+    <header>
+        <div class="pi">π</div>
+        <div class="day-log">Day 0/365</div>
+    </header>
+
+    <main>
+        <section class="poem-wrap" aria-label="Poem">
+            <div class="poem-title">
+                Fardin
+            </div>
+            <div class="poem">
+                Oh TIER 1 in MARCH,
+                Inshallah
+            </div>
+            <div class="poem-date">
+                00/00/2026
+            </div>
+        </section>
+    </main>
+</div>
 </body>
 </html>
