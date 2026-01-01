@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Daily Poetry</title>
+
+    <!-- Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
         :root {
-          --pad: 13px;          /* multiple of 13 */
+          --pad: 13px;
           --pi-red: #c1121f;
+          --panel-red: #f4d6d9;
         }
 
         * { box-sizing: border-box; }
 
         body {
           margin: 0;
-          font-family: serif;
+          font-family: "Playfair Display", serif;
           background: #fff;
           color: #111;
         }
@@ -46,7 +53,7 @@
           right: var(--pad);
           line-height: 1;
           white-space: nowrap;
-          font-size: clamp(23px, 1.3vw, 39px);
+          font-size: clamp(26px, 1.3vw, 39px);
         }
 
         main {
@@ -66,46 +73,45 @@
         }
 
         .poem-title {
+          font-weight: 700;
           line-height: 1.1;
           font-size: clamp(65px, 3vw, 113px);
         }
 
         .poem {
+          font-weight: 400;
           line-height: 1.3;
           white-space: pre-line;
           font-size: clamp(13px, 7vw, 52px);
-          <!--Long Poem: font-size: clamp(13px, 2.6vw, 52px);-->
         }
 
         .poem-date {
-          line-height: 0.3;
-          white-space: pre-line;
+          line-height: 1;
           font-size: clamp(13px, 2.6vw, 26px);
+          opacity: 0.75;
         }
 
-        /* Print-friendly formatting (sizes in px, all multiples of 13) */
+        footer {
+          margin-top: var(--pad);
+          padding: calc(var(--pad) * 2) var(--pad);
+          background: var(--panel-red);
+          text-align: center;
+        }
+
+        footer a {
+          color: var(--pi-red);
+          text-decoration: none;
+          font-size: clamp(13px, 2vw, 26px);
+          font-weight: 600;
+        }
+
+        footer a:hover {
+          text-decoration: underline;
+        }
+
+        /* Print-friendly formatting */
         @media print {
-          body { color: #000; }
-          .page {
-            min-height: auto;
-            padding: 0.75in;
-          }
-          header {
-            padding: 0;
-            margin-bottom: 0.35in;
-          }
-          .day-log {
-            position: static;
-            text-align: right;
-            font-size: 26px;
-          }
-          .pi {
-            color: #000;
-            font-size: 65px;
-          }
-          .poem-title { font-size: 39px; }
-          .poem { font-size: 26px; line-height: 1.4; }
-          .poem-date { font-size: 13px; }
+          footer { display: none; }
         }
     </style>
 </head>
@@ -114,23 +120,32 @@
 <div class="page">
     <header>
         <div class="pi">π</div>
-        <div class="day-log">Day 0/365</div>
+        <div class="day-log">Day 1/365</div>
     </header>
 
     <main>
         <section class="poem-wrap" aria-label="Poem">
             <div class="poem-title">
-                Fardin
+                New Beginnings
             </div>
+
             <div class="poem">
-                Oh TIER 1 in MARCH,
-                Inshallah
+                Previous paintings,
+                Hanging on gallery walls.
+                A blank canvas
             </div>
+
             <div class="poem-date">
-                00/00/2026
+                01/01/2026
             </div>
         </section>
     </main>
+
+    <footer>
+        <a href="https://www.instagram.com/pi_arch.co/" aria-label="Daily Poetry Home">
+            the archive
+        </a>
+    </footer>
 </div>
 </body>
 </html>
